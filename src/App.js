@@ -3,7 +3,7 @@ import React, { Component, useEffect } from "react";
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-//import SmurfProfile from './components/SmurfProfile';
+import SmurfProfile from './components/SmurfProfile';
 
 import { connect } from "react-redux";
 import { fetchSmurfs } from './actions/index';
@@ -30,9 +30,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-            {/* <Route path='/smurfs/:smurfId'>
+            <Route path='/smurfs/:smurfId'>
               //  <SmurfProfile/>
-            </Route> */}
+            </Route>
 
             <Route exact path={'/'}>
                 <main>

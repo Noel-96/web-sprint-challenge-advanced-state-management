@@ -14,16 +14,18 @@ import { BrowserRouter as Router } from "react-router-dom";
 const { worker } = require('./mocks/browser');
 worker.start();
 
-const store = createStore(reducer, applyMiddleware(logger,thunk)); 
+const store = createStore(reducer, applyMiddleware(thunk, logger)); 
 
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
+    <React.StrictMode>
     <Provider store={store}>
         <Router>
             <App />
         </Router>
-    </Provider>,
+    </Provider>
+    </React.StrictMode>,
     rootElement
 ); 
 
